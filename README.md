@@ -1,40 +1,44 @@
 # Trabalho Prático 01
 
-*Valor: 15 pontos*
+*Valor: 20 pontos*
 
 *Trabalho em dupla*
 
-## Sistema de Reservas
+## Sistema de Bilheteria
 
-A diretoria do Colégio Técnico deseja informatizar o processo de reserva de salas de aula disponíveis no colégio. 
-Esse sistema deverá exibir a lista de salas de aula disponíveis para reserva, além de permitir que professores e responsáveis possam requerer a reserva da sala para um determinado dia/horário. 
-Para que isso seja possível, é necessário que cada sala seja representada pelos seguintes dados: número da sala, capacidade, e a lista de reservas realizadas.
-Ainda, existem dois tipos de sala de aula: convencional, e laboratório. 
-Em relação a reserva, cada uma deverá informar o nome do professor responsável, o setor ao qual esse professor pertence, e a data/hora da reserva realizada.
+O objetivo deste trabalho prático é criar um sistema de gerenciamento de bilheteria em Java, que será integrado a um sistema de bilheteria de cinema ou teatro. O sistema de gerenciamento de bilheteria deve incorporar os conceitos de classes e métodos, arrays, herança e polimorfismo, classe Object, classes abstratas, e interfaces.
 
 
-## Prova de Conceito
+### Funcionalidades
 
-Nesta primeira etapa do trabalho, foi requerido a sua equipe a implementação de uma prova de conceito do sistema.
-Nesta prova de conceito não será necessário, por enquanto, o uso de mecanismos de armazenamento externo (arquivos e/ou banco de dados).
-Isso significa que os dados do sistema (salas, reservas, etc) deverão ser fornecidos toda vez que o sistema for executado.
-Ainda neste primeiro momento, cada sala está restrita a receber até 20 reservas.
+O sistema deverá implementar as seguintes funcionalidades:
 
-Em relação as funcionalidades, a sua equipe conversou com a direção do colégio, e chegou às seguintes histórias de usuário:
+1. **Cadastro de Eventos:** Permitir a criação de eventos, como filmes, espetáculos de teatro, concertos, etc. Registrar informações sobre o nome do evento, data, horário, preço do ingresso, e outros detalhes relevantes.
+3. **Venda de Ingressos:** Permitir a venda de ingressos para um evento específico. Verificar a disponibilidade de ingressos e calcular o valor total da venda.
+4. **Gerenciamento de Receita:** Calcular a receita total gerada pela venda de ingressos para cada evento. 
+5. **Exibição de Eventos:** Listar os eventos criados, incluindo nome, data, horário e receita total gerada. Listar a quantidade de ingressos vendidos e disponíveis para cada evento. Exibir a receita total acumulada de todos os eventos
+6. **Exibição de Ingressos:** Para um evento específico, realizar o levantamento dos ingressos 
+vendidos, exibindo a data de venda, o tipo do ingresso, e seu valor. Exibir a receita total gerada pela venda de ingressos para o evento.
 
-- Como usuário, gostaria de visualizar as salas disponíveis para reserva
-- Como usuário, gostaria de visualizar as reservas realizadas em uma sala
-- Como professor, gostaria de reservar uma sala
 
-Por fim, a interface dessa prova de conceito deverá ser implementada por meio diálogos (`JOptionPane`).
+### Observações
 
-### Avaliação
+- O sistema deverá suportar três tipos de ingresso: normal, meia entrada, e VIP. O valor do ingresso VIP é o dobro do valor do ingresso normal. O valor do ingresso de meia entrada é 50% do valor do ingresso normal.
+- O sistema deverá suportar três tipos de evento: filme, teatro e concerto. O filme tem capacidade de 200 ingressos, o teatro 250, e o concerto 150.
+- Um evento é composto por, pelo menos, nome, data e hora, e preço do ingresso.
+- Um ingresso é composto por, pelo menos, data de venda, tipo de ingresso e valor.
 
-Para a primeira etapa, o trabalho deverá ser apresentado para o professor no dia 20/10/2022 (duração de 10 minutos).
-A avaliação levará em consideração os seguintes critérios:
 
-- Modelagem das classes, métodos e atributos para representar os dados do sistema
-- Implementação e uso adequado dos recursos de encapsulamento oferecidos pela linguagem Java
-- Uso adequado dos recursos de herança e polimorfismo
-- Implementação das funcionalidades requeridas no trabalho
-- Utilização dos recursos de interface gráfica (`JOptionPane`)
+### Requisitos Técnicos
+
+- Utilize herança e polimorfismo para simplificar o código e reutilizar funcionalidades comuns.
+- Sobrecarregue os métodos da classe Object para fornecer representações adequadas em formato de `string` dos objetos criados.
+- Utilize classes abstratas e interfaces para melhor estruturar a relação entre as classes do sistema.
+- Crie uma classe principal que demonstre o funcionamento do sistema, incluindo a criação de eventos, venda de ingressos, exibição de informações e impressão de detalhes.
+- Utilize os diálogos (`JOptionPane`) como interface de comunicação com o usuário.
+
+
+## Avaliação
+
+O trabalho deverá ser apresentado para o professor no dia 09/10/2023, em uma entrevista com duração de 15 minutos. 
+É imprescindível a presença da dupla no dia da apresentação.
