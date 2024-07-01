@@ -63,5 +63,5 @@ O sistema deverá implementar as seguintes funcionalidades:
 
 ## Avaliação
 
-O trabalho deverá ser apresentado para o professor no dia 12/07/2024, em uma entrevista com duração de 10 minutos. 
+O trabalho deverá ser apresentado para o professor no dia 12/08/2024, em uma entrevista com duração de 10 minutos. 
 É imprescindível a presença do grupo no dia da apresentação.
