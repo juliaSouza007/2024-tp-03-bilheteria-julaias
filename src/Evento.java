@@ -15,4 +15,5 @@ abstract class Evento {
         this.local = local;
         this.preco = preco;
     }
+
 }

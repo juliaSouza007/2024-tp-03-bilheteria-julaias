@@ -6,4 +6,5 @@ public class Teatro extends Evento{
         super(nome, data, hora, local, preco);
         this.quantidadeIngressos = 250;
     }
+
 }

@@ -6,4 +6,5 @@ public class Filme extends Evento{
         super(nome, data, hora, local, preco);
         super.quantidadeIngressos = 200;
     }
+
 }

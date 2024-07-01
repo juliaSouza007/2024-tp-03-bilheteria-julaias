@@ -6,4 +6,5 @@ public class Concerto extends Evento{
         super(nome, data, hora, local, preco);
         this.quantidadeIngressos = 150;
     }
+
 }
