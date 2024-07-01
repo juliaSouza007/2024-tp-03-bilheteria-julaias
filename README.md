@@ -1,8 +1,8 @@
 # Trabalho Prático 01
 
-*Valor: 20 pontos*
+*Valor: 12 pontos*
 
-*Trabalho em dupla*
+*Trabalho em trio. **Não serão aceitos trabalhos individuais.***
 
 ## Sistema de Bilheteria
 
@@ -13,21 +13,44 @@ O objetivo deste trabalho prático é criar um sistema de gerenciamento de bilhe
 
 O sistema deverá implementar as seguintes funcionalidades:
 
-1. **Cadastro de Eventos:** Permitir a criação de eventos, como filmes, espetáculos de teatro, concertos, etc. Registrar informações sobre o nome do evento, data, horário, preço do ingresso, e outros detalhes relevantes.
-3. **Venda de Ingressos:** Permitir a venda de ingressos para um evento específico. Verificar a disponibilidade de ingressos e calcular o valor total da venda.
-4. **Gerenciamento de Receita:** Calcular a receita total gerada pela venda de ingressos para cada evento. 
-5. **Exibição de Eventos:** Listar os eventos criados, incluindo nome, data, horário e receita total gerada. Listar a quantidade de ingressos vendidos e disponíveis para cada evento. Exibir a receita total acumulada de todos os eventos
-6. **Exibição de Ingressos:** Para um evento específico, realizar o levantamento dos ingressos 
-vendidos, exibindo a data de venda, o tipo do ingresso, e seu valor. Exibir a receita total gerada pela venda de ingressos para o evento.
+#### Cadastro de Eventos
 
+- Crie uma classe abstrata `Evento` com atributos comuns (nome, data, hora, local, quantidade de ingressos, preço do ingresso).
+- Um evento é composto por, pelo menos, nome, data, hora, local e preço do ingresso.
+- Implemente classes concretas `Filme`, `Teatro` e `Concerto` que herdam de Evento.
+    - O filme tem capacidade de 200 ingressos, o teatro 250, e o concerto 150.
 
-### Observações
+#### Venda de Ingressos
 
-- O sistema deverá suportar três tipos de ingresso: normal, meia entrada, e VIP. O valor do ingresso VIP é o dobro do valor do ingresso normal. O valor do ingresso de meia entrada é 50% do valor do ingresso normal.
-- O sistema deverá suportar três tipos de evento: filme, teatro e concerto. O filme tem capacidade de 200 ingressos, o teatro 250, e o concerto 150.
-- Um evento é composto por, pelo menos, nome, data e hora, e preço do ingresso.
-- Um ingresso é composto por, pelo menos, data de venda, tipo de ingresso e valor.
+- Crie uma classe `Ingresso` que tenha atributos como data de venda e valor.
+    - Um ingresso é composto por, pelo menos, data de venda, tipo de ingresso e valor.
+- Crie subclasses que determinem qual tipo de ingresso que está a venda. Poderão ser vendidos Ingressos normais, VIP, e meia-entrada.
+    - O valor do ingresso VIP é o dobro do valor do ingresso normal. O valor do ingresso de meia entrada é 50% do valor do ingresso normal.  
+- Implemente métodos para verificar a disponibilidade de ingressos e calcular o valor total da venda.
+    - Verifique a disponibilidade de lugares disponível no evento.
+    - Teatro poderão ocupar no máximo 20% dos ingressos totais com meia-entrada
+    - Shows deverão ocupar no máximo 10% dos ingressos totais com ingressos VIP
+    - Cinema não deve permitir a compra de ingressos VIP
+- Utilize o polimorfismo para vender ingressos sem saber o tipo específico de evento.
 
+#### Relatório de Receita
+
+- Defina uma interface responsável por descrever o cálculo e a exibição do relatório de receita.
+- Essa interface deverá definir dois métodos:
+    - Um para calcular o valor total da receita gerada pelo objeto da classe que irá herdá-la
+    - Um para exibir o extrato relacionado a receita daquele objeto.
+- Essa interface deverá ser implementada pelas classes `Evento` e `Ingresso`
+
+#### Exibição de Eventos
+
+- Liste os eventos criados, incluindo nome, data, hora, local e receita total gerada.
+- Liste a quantidade de ingressos vendidos e disponíveis para cada evento.
+- Exiba a receita total acumulada de todos os eventos.
+
+#### Exibição de Ingressos
+
+- Para um evento específico, realize o levantamento dos ingressos vendidos, exibindo a data de venda, o tipo do ingresso, e seu valor.
+- Exiba a receita total gerada pela venda de ingressos para o evento.
 
 ### Requisitos Técnicos
 
@@ -40,5 +63,5 @@ vendidos, exibindo a data de venda, o tipo do ingresso, e seu valor. Exibir a re
 
 ## Avaliação
 
-O trabalho deverá ser apresentado para o professor no dia 09/10/2023, em uma entrevista com duração de 15 minutos. 
-É imprescindível a presença da dupla no dia da apresentação.
+O trabalho deverá ser apresentado para o professor no dia 12/07/2024, em uma entrevista com duração de 10 minutos. 
+É imprescindível a presença do grupo no dia da apresentação.
