@@ -62,7 +62,7 @@ O sistema deverá implementar as seguintes funcionalidades:
 - Utilize os diálogos (`JOptionPane`) como interface de comunicação com o usuário.
 
 
-## Avaliação
+## Avaliação    
 
 O trabalho deverá ser apresentado para o professor no dia 12/08/2024, em uma entrevista com duração de 10 minutos. 
 É imprescindível a presença do grupo no dia da apresentação.
