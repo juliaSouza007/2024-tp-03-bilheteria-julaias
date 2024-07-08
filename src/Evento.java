@@ -1,19 +1,43 @@
 import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 abstract class Evento {
     private String nome;
     private Date data;
     private double hora;
     private String local;
-    protected int quantidadeIngressos;
+    protected int qtdeIngressos;
     private double preco;
+    public SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy"); // Para converter String para Date
+    ArrayList<Ingresso> ingressos;
 
-    public Evento (String nome, Date data, double hora, String local, double preco) {
+    public Evento (String nome, String data, double hora, String local, double preco) {
         this.nome = nome;
-        this.data = data;
+        try{ // Converte String para Date
+            this.data = formatoData.parse(data);
+        }catch (Exception e){
+            System.out.println("<< Date Error >>");
+        }
         this.hora = hora;
         this.local = local;
         this.preco = preco;
+        this.ingressos = new ArrayList<>();
     }
 
+    int ingressosDisponiveis() {
+        return qtdeIngressos - ingressos.size();
+    }
+
+    double totalVendas() {
+        double total = 0;
+
+        for (Ingresso atual : this.ingressos) {
+            if(atual != null) {
+                total += atual.valor;
+            }
+        }
+
+        return total;
+    }
 }

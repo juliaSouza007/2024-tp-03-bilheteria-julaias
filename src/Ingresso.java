@@ -1,0 +1,17 @@
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+public class Ingresso {
+    private Date data;
+    protected double valor;
+    public SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy"); // Para converter String para Date
+
+    Ingresso(String data, double valor) {
+        try{ // Converte String para Date
+            this.data = formatoData.parse(data);
+        }catch (Exception e){
+            System.out.println("<< Date Error >>");
+        }
+        this.valor = valor;
+    }
+}
