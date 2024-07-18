@@ -7,10 +7,10 @@ abstract class Evento {
     private Date data;
     private double hora;
     private String local;
-    protected int qtdeIngressos;
+    protected int capacidade;
     private double preco;
     public SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy"); // Para converter String para Date
-    ArrayList<Ingresso> ingressos;
+    protected ArrayList<Ingresso> ingressos;
 
     public Evento (String nome, String data, double hora, String local, double preco) {
         this.nome = nome;
@@ -25,11 +25,9 @@ abstract class Evento {
         this.ingressos = new ArrayList<>();
     }
 
-    int ingressosDisponiveis() {
-        return qtdeIngressos - ingressos.size();
-    }
+    public abstract boolean ingressosDisp();
 
-    double totalVendas() {
+    public double totalVendas() {
         double total = 0;
 
         for (Ingresso atual : this.ingressos) {
@@ -37,7 +35,10 @@ abstract class Evento {
                 total += atual.valor;
             }
         }
-
         return total;
+    }
+
+    public void addIngresso(Ingresso newIngresso) {
+        this.ingressos.add(newIngresso);
     }
 }

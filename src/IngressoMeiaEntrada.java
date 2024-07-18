@@ -1,5 +1,6 @@
 public class IngressoMeiaEntrada extends Ingresso{
-    IngressoMeiaEntrada(String data, double valor) {
+    public IngressoMeiaEntrada(String data, double valor) {
         super(data, valor/2);
+        this.tipo = 'm';
     }
 }
