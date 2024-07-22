@@ -7,25 +7,38 @@ public class Teatro extends Evento{
         this.capacidade = 250;
     }
 
-    public boolean ingressosDisp() {
-        if (ingressos.size() > capacidade) {
-            System.out.println("< Ingressos indisponíveis >");
-            return false;
-        }
-
-        int ingressosVip = 0;
-
-        for (Ingresso atual : this.ingressos) {
-            if(atual != null && atual.tipo == 'v') {
-                ingressosVip++;
+    @Override
+    public void addIngresso(Ingresso newIngresso) {
+        if(ingressos.size() <= capacidade) {
+            if (newIngresso.tipo == 'm' && ingressoMeiaDisp() <= capacidade * 0.2) {
+                this.ingressos.add(newIngresso);
+            } else {
+                this.ingressos.add(newIngresso);
             }
         }
+    }
 
-        if (ingressosVip > capacidade*0.1) {
-            System.out.println("< Ingressos VIPs indisponíveis >");
-            return false;
+    @Override
+    public double totalReceita() {
+        double total = 0;
+
+        for (Ingresso atual : this.ingressos) {
+            if(atual != null) {
+                total += atual.valor;
+            }
         }
+        return total;
+    }
 
-        return true;
+    @Override
+    public void extratoReceita() {
+        System.out.println("===== Extrato da Receita do Teatro '" + this.getNome() + "' =====");
+        for(Ingresso atual : this.ingressos) {
+            if (atual != null) {
+                System.out.println(atual.toString());
+            }
+        }
+        System.out.println("==========================================================\n");
+
     }
 }

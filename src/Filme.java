@@ -7,25 +7,34 @@ public class Filme extends Evento{
         super.capacidade = 200;
     }
 
-    public boolean ingressosDisp() {
-        if (ingressos.size() > capacidade) {
-            System.out.println("< Ingressos indisponíveis >");
-            return false;
+    @Override
+    public void addIngresso(Ingresso newIngresso) {
+        if(ingressos.size() <= capacidade) {
+            if (newIngresso.tipo != 'v') this.ingressos.add(newIngresso);
         }
+    }
 
-        int ingressosVip = 0;
+    @Override
+    public double totalReceita() {
+        double total = 0;
 
         for (Ingresso atual : this.ingressos) {
-            if(atual != null && atual.tipo == 'v') {
-                ingressosVip++;
+            if(atual != null) {
+                total += atual.valor;
             }
         }
+        return total;
+    }
 
-        if (ingressosVip > capacidade*0.1) {
-            System.out.println("< Ingressos VIPs indisponíveis >");
-            return false;
+    @Override
+    public void extratoReceita() {
+        System.out.println("===== Extrato da Receita do Filme '" + this.getNome() + "' =====");
+        for(Ingresso atual : this.ingressos) {
+            if (atual != null) {
+                System.out.println(atual.toString());
+            }
         }
+        System.out.println("=========================================================\n");
 
-        return true;
     }
 }
