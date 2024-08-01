@@ -6,6 +6,18 @@ public class Concerto extends Evento{
     }
 
     @Override
+    public void extratoReceita() {
+        System.out.println("==== Extrato da Receita do Concerto '" + this.getNome() + "' ====");
+        for(Ingresso atual : this.ingressos) {
+            if (atual != null) {
+                System.out.println(atual.toString());
+            }
+        }
+        System.out.println("==========================================================\n");
+
+    }
+
+    @Override
     public void addIngresso(Ingresso newIngresso) {
         if(ingressos.size() <= capacidade) {
             if (newIngresso.tipo == 'v' && ingressoVIPDisp() <= capacidade * 0.1) {
