@@ -85,16 +85,6 @@ abstract class Evento implements IReceita{
     }
 
     @Override
-    public void extratoReceita() {
-        System.out.println("\n<< Extrato de Receita do Evento: " + nome + " >>");
-        System.out.println("Data: " + data);
-        System.out.println("Horário: " + hora);
-        System.out.println("Local: " + local);
-        System.out.println("Receita Total: R$ " + totalReceita());
-        System.out.println("Ingressos vendidos: " + ingressos.size());
-    }
-    
-    @Override
     public String toString() {
         return "<< EVENTO " + nome + " >> \nData: " + data + "\nHorário: " + hora + "\nLocal: " + local + "\nReceita Total: " + totalReceita();
     }
