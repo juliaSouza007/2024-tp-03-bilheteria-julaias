@@ -1,5 +1,6 @@
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import javax.swing.*;
 
 public class Ingresso implements IReceita {
     private Date data;
