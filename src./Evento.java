@@ -50,7 +50,7 @@ abstract class Evento implements IReceita{
                 i++;
             }
         }
-        return i;
+        return lugaresDisp() - i;
     }
 
     public int ingressoMeiaDisp() {
@@ -60,7 +60,7 @@ abstract class Evento implements IReceita{
                 i++;
             }
         }
-        return i;
+        return lugaresDisp() - i;
     }
 
     public int ingressoVIPDisp() {
@@ -70,9 +70,9 @@ abstract class Evento implements IReceita{
                 i++;
             }
         }
-        return i;
+        return  lugaresDisp() - i;
     }
-    
+
     @Override
     public double totalReceita() {
         double total = 0;
@@ -88,7 +88,7 @@ abstract class Evento implements IReceita{
     public String toString() {
         return "<< EVENTO " + nome + " >> \nData: " + data + "\nHorário: " + hora + "\nLocal: " + local + "\nReceita Total: " + totalReceita();
     }
-    
+
     public static double receitaTotalAcumulada(List<Evento> eventos) {
         double receitaTotal = 0;
         for (Evento evento : eventos) {
@@ -98,7 +98,7 @@ abstract class Evento implements IReceita{
         }
         return receitaTotal;
     }
-    
+
     public void ingressosVendidos() {
         System.out.println("\n<< Ingressos vendidos para o evento: " + nome + " >>");
         for (Ingresso ingresso : ingressos) {
@@ -115,7 +115,7 @@ abstract class Evento implements IReceita{
     public String getNome() {
         return this.nome;
     }
-    
+
     public Ingresso getIngresso(int i) {
         return this.ingressos.get(i);
     }
