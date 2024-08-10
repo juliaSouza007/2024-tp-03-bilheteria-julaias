@@ -1,4 +1,3 @@
-import java.util.Date;
 import javax.swing.*;
 
 public class Filme extends Evento{
@@ -16,6 +15,7 @@ public class Filme extends Evento{
                 System.out.println(atual.toString());
             }
         }
+        System.out.println("Receita total: " + totalReceita());
         System.out.println("=========================================================\n");
 
     }
@@ -25,9 +25,17 @@ public class Filme extends Evento{
         if(ingressos.size() <= capacidade) {
             if (newIngresso.tipo != 'v') {
                 this.ingressos.add(newIngresso);
+                JOptionPane.showMessageDialog(null, "<< COMPRA REALIZADA >>","Operção concluída com sucesso", JOptionPane.PLAIN_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(null, "Não há ingresso VIP no cinema!!","<< ERRO 561 >>", JOptionPane.ERROR_MESSAGE);
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Não há mais ingressos disponíveis","<< ERRO 564 >>", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    @Override
+    public int ingressoVIPDisp() {
+        return 0;
     }
 }
